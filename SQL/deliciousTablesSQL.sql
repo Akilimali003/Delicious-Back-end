@@ -234,25 +234,26 @@ create table `tables`(
 	`Table_Number` varchar(9) NOT NULL unique,
 	`Details` varchar(200) DEFAULT NULL,
 	`rid` int not null,
+	`tstatus` int not null,
 	PRIMARY KEY (`Table_Number`),
 	FOREIGN KEY (`rid`) REFERENCES `restaurant`(`rid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-insert into `tables`(`Table_Number`,`Details`, `rid`)
+insert into `tables`(`Table_Number`,`Details`, `rid`, `tstatus`)
 values
-("101","Capacity 4 People",1),
-("102","Capacity 4 People Near Window",1),
-("103","Capacity 3 People",1),
-("104","Capacity 2 People",1),
-("105","Capacity 8 People Family Table",1),
-("201","Capacity 4 People",2),
-("202","Capacity 4 People Near Window",2),
-("203","Capacity 3 People",2),
-("302","Capacity 4 People Near Window",3),
-("303","Capacity 3 People",3),
-("304","Capacity 2 People",3),
-("305","Capacity 8 People Family Table",3);
+("101","Capacity 4 People",1,0),
+("102","Capacity 4 People Near Window",1,0),
+("103","Capacity 3 People",1,0),
+("104","Capacity 2 People",1,1),
+("105","Capacity 8 People Family Table",1,1),
+("201","Capacity 4 People",2,0),
+("202","Capacity 4 People Near Window",2,0),
+("203","Capacity 3 People",2,0),
+("302","Capacity 4 People Near Window",3,0),
+("303","Capacity 3 People",3,1),
+("304","Capacity 2 People",3,0),
+("305","Capacity 8 People Family Table",3,0);
 
 
 -- ***************************************************************************************************************************************************************************************************************** 
